@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+var urlmenu = document.getElementById('menu1');
+
+urlmenu.onchange = function() {
+	alert("hello");
+  document.location.href = this.value;
+  /* window.location.assign(this.options[ this.selectedIndex ].value); */
+};
+
+function report(daily){  
+	 alert(daily);
+	 var dropDown = document.getElementById("myDestination22");
+	 alert(dropDown);
+     dropDown.selectedIndex = 0;
+	} 
+	
+function report1(daily){  
+	 
+	} 	
+
+function onchangefunction(val){alert(val);}
+		
+$(document).ready(function () {
+    $("#test1").bind('change', function() { alert("Changed");});
+    $("#test1").bind('click', function() { alert($(this).find('option:selected').text());
+   });
+});
+</script>
+<body>
+<select name="menu1" id="menu1">
+			  <option>Choose:</option>
+			  <option value="https://console.ibm-gts.us-south.bluemix.net">Solution Portal 1</option>
+			  <option value="https://console.ibm-gts.us-south.bluemix.net">Solution Portal 2</option>
+</select>
+
+<form action="../">
+<select onchange="document.location.href(this.options[this.selectedIndex].value,'_top')">
+    <option value="">Choose a destination...</option>
+    <option value="http://www.yahoo.com/">YAHOO</option>
+    <option value="http://www.google.com/">GOOGLE</option>
+    <option value="http://www.altavista.com/">ALTAVISTA</option>
+    <option value="http://www.amazon.com/">AMAZON</option>
+    <option value="http://artlung.com/">ARTLUNG</option>
+    
+</select>
+<input type="button" value="Open in New Window!" onclick="ob=this.form.myDestination;window.open(ob.options[ob.selectedIndex].value)">
+</form>
+			
+----------
+<form action="../">
+<select name="myDestination" onchange="ob=this.form.myDestination;window.open(ob.options[ob.selectedIndex].value)">
+    <option value="http://www.yahoo.com/">YAHOO</option>
+    <option value="http://www.google.com/">GOOGLE</option>
+    <option value="http://www.altavista.com/">ALTAVISTA</option>
+    <option value="http://www.amazon.com/">AMAZON</option>
+    <option value="http://artlung.com/">ARTLUNG</option>
+</select>
+</form>
+			
+			
+			----
+			on change
+			
+<form action="../">
+			<select name="myDestination" onchange="ob=this.form.myDestination;window.open(ob.options[ob.selectedIndex].value)">
+			    <option value="https://console.ibm-gts.us-south.bluemix.net">Cognitive Solutioner</option>
+			    <option value="https://console.ibm-gts.us-south.bluemix.net">Cognitive Solutioner</option>
+			</select>
+		</form>
+		
+					----
+			on change only 1 value
+			
+<form action="../">
+			<select name="myDestination" onchange="ob=this.form.myDestination;window.open(ob.options[ob.selectedIndex].value)">
+			    <option value="https://console.ibm-gts.us-south.bluemix.net">Cognitive Solutioner</option>
+	<!-- 		    <option value="https://console.ibm-gts.us-south.bluemix.net">Cognitive Solutioner</option> -->
+			</select>
+		</form>
+
+			----
+			on change only 1 value and 1 empty value
+			
+<form action="../">
+			<select name="myDestination" onchange="ob=this.form.myDestination;window.open(ob.options[ob.selectedIndex].value)">
+			    <option value="https://console.ibm-gts.us-south.bluemix.net">Cognitive Solutioner</option>
+	 		    <option value=""></option> 
+			</select>
+		</form>
+
+
+			----
+			on change direct call to function onchangefuntion
+			
+<form action="../">
+			<select name="myDestination" onchange="onchangefunction(this.value)">
+			 <option selected>A</option> 
+			    <option value="https://console.ibm-gts.us-south.bluemix.net">Cognitive Solutioner</option>
+			</select>
+		</form>
+		
+----
+			on click 2 values
+			
+<form action="../">
+			<select name="myDestination" onclick="ob=this.form.myDestination;window.open(ob.options[ob.selectedIndex].value)">
+			    <option value="https://console.ibm-gts.us-south.bluemix.net">Cognitive Solutioner</option>
+			    <option value="https://console.ibm-gts.us-south.bluemix.net">Cognitive Solutioner</option>
+			</select>
+		</form>
+		
+----
+			on click 1 values
+			
+<form action="../">
+			<select name="myDestination" onclick="ob=this.form.myDestination;window.open(ob.options[ob.selectedIndex].value)">
+			    <option value="https://console.ibm-gts.us-south.bluemix.net">Cognitive Solutioner</option>
+			    <!-- <option value="https://console.ibm-gts.us-south.bluemix.net">Cognitive Solutioner</option> -->
+			</select>
+		</form>
+		
+		
+----
+
+----
+<br>
+ondd change calling a funciton 
+
+			<select name="myDestination22" id="myDestination22" onchange="report1(this.value)">
+				<option value="" disabled>Select Value</option>
+			    <option value="https://console.ibm-gts.us-south.bluemix.net">Cognitive Solutioner</option>
+			    <option value="https://console.ibm-gts.us-south.bluemix.net">Cognitive Solutioner</option> 
+			</select>		
+<script>
+function report1(daily){  
+	 alert(daily);
+	 var dropDown = document.getElementById("myDestination22");
+	 alert(dropDown);
+    dropDown.selectedIndex = 0;
+	} 
+</script>			
+		
+----
+
+function
+<form action="../">
+			<select name="myDestination" onchange="report(this.value)">
+			    <option value="https://console.ibm-gts.us-south.bluemix.net">Cognitive Solutioner</option>
+			 <!--    <option value="https://console.ibm-gts.us-south.bluemix.net">Cognitive Solutioner</option> -->
+			</select>
+		</form>		
+-----------
+function - $windows
+
+<form action="../">
+			<select name="test1" id="test1">
+			    <option value="https://console.ibm-gts.us-south.bluemix.net">Cognitive Solutioner</option>
+			    <option value="https://console.ibm-gts.us-south.bluemix.net">Cognitive Solutioner</option> 
+			</select>
+		</form>	
+
+</body>
+</html>
